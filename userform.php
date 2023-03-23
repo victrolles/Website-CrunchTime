@@ -21,7 +21,7 @@
             <h1>HNFC</h1>
             <h2 class="title">Renseigner</h2>
         </div>
-        <div class="main">
+        <div class="main2">
             <div class="info">
                 <?php
                     if (isset($_SESSION['num_rfid'])){
@@ -41,18 +41,18 @@
                 <form method="POST" action="#">
                   <div class="field input">
                       <label>Numéro de chambre : </label>
-                      <input type="text" name="num_chambre" placeholder="Numéro de chambre" required>
+                      <input type="text" name="num_chambre" placeholder="Numéro de chambre">
                   </div>
                   <div class="field input">
                       <label>Nom et Prénom : </label>
-                      <input type="text" name="nom" placeholder="Nom" required>
-                      <input type="text" name="prenom" placeholder="Prénom" required>
+                      <input type="text" name="nom" placeholder="Nom">
+                      <input type="text" name="prenom" placeholder="Prénom">
                   </div>
                   <div class="field input">
                       <label>Etat : </label>
                       <select id="etat" name="etat">
-                          <option value="1">En état</option>
-                          <option value="0" selected>Endommagé</option>
+                          <option value="1" selected>En état</option>
+                          <option value="0">Endommagé</option>
                       </select>
                   </div>
                   <div class="field button">
@@ -94,10 +94,10 @@
 
         $sql = "UPDATE materiel SET id_patient='$id_patient', num_chambre = '$num_chambre', etat_valide = '$etat_valide', utiliser = '$utiliser' WHERE num_rfid = '$num_rfid'";
         $result = $conn->query($sql);
-        if ($result){
-            echo "Success";
-        }else{
-            echo "Error";
-        }
+        // if ($result){
+        //     echo "Success";
+        // }else{
+        //     echo "Error";
+        // }
     }
 ?>

@@ -47,4 +47,47 @@
             return false;
         }
     }
+
+    function displayChambre() {
+        global $conn;
+        
+        $type = $_SESSION['type'];
+        $service = $_SESSION['service'];
+
+        $sql = "SELECT MAT.num_rfid, MAT.num_chambre, MAT.etat_valide, MAT.utiliser FROM materiel MAT WHERE id_type = '$type' AND num_chambre IN (SELECT num_chambre FROM localisation WHERE id_service = '$service') AND etat_valide = 1 AND utiliser = 1";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            while ($row = $result->fetch_assoc()) {
+                echo "Chambre n° ".$row['num_chambre'];
+            }
+        } else {
+            echo "Aucune chambre n'est disponible";
+        }
+
+        
+    }
+
+    function displayReserve() {
+        global $conn;
+        
+        $type = $_SESSION['type'];
+        $service = $_SESSION['service'];
+
+        $sql = "SELECT MAT.num_rfid, MAT.num_chambre, MAT.etat_valide, MAT.utiliser FROM materiel MAT WHERE id_type = '$type' AND num_chambre IN (SELECT num_chambre FROM localisation WHERE id_service = '$service') AND etat_valide = 1 AND utiliser = 0";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $number = 0;
+        while ($row = $result->fetch_assoc()) {
+            $number++;
+        }
+
+        $sql = "SELECT num_reserve FROM service WHERE id = '$service'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $reserve = $row['num_reserve'];
+
+        echo "Réserve $reserve : $number disponible(s)";
+    }
 ?>

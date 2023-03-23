@@ -66,7 +66,7 @@ body {
     background-color: #b8b8b8;
 }
 
-.main {
+.main, .main2 , .main3 {
     background-color: #f2f2f2;
 }
 
@@ -149,7 +149,7 @@ option {
     text-align: center;
 }
 
-.other .noscan input {
+.other .noscan input, .rechercher input, .main3 input {
     background-color: #01982c;
     border: none;
     border-radius: 10px;
@@ -160,5 +160,15 @@ option {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    
+}
+
+.rechercher input {
+    background-color: #ED5C26;
+}
+
+.main3 .service, .main3 .etat, .main3 .reserve, .main3 .chambre, .main3 .type, .main3 .search {
+    text-align: center;
+    align-items: center;
     
 }

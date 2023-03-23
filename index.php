@@ -23,8 +23,14 @@
         </div>
         <div class="main">
             <div class="row">
+                <div class="rechercher">
+                    <a href="./research.php">
+                      <input type="submit" value="Rechercher">
+                    </a>
+                </div>
                 <div class="col">
                   <h4 class="title">Avec Scanner</h4>
+
                   <div id="reader"></div>
                 </div>
                 <div class="other">
@@ -33,21 +39,17 @@
                     <form class="scan" action="#" method="post">
                       <div class="field input">
                           <label>Référence : </label>
-                          <input type="text" name="num_rfid" placeholder="Numéro du matériel">
+                          <input type="text" name="num" placeholder="Numéro du matériel">
                       </div>
-                    </form>
-                    <form class="noscan" action="#" method="post">
-                      <div class="field button">
-                          <input type="submit" name="submit" value="Valider">
+
+                      <div class="noscan">
+                          <div class="field button">
+                              <input type="submit" name="submit" value="Valider">
+                          </div>
                       </div>
+                      
                     </form>
                   </div>
-                <!-- <div class="col" style="padding: 30px">
-                  <h4>Scan Result </h4>
-                  <div id="result">
-                    Result goes here
-                  </div>
-                </div> -->
 
               </div>
               <!-- partial -->
@@ -69,8 +71,8 @@
 
 <?php
     if (isset($_POST['submit'])){
-        if (isset($_POST['num_rfid']) && !empty($_POST['num_rfid'])){
-            $_SESSION['num_rfid'] = $_POST['num_rfid'];
+        if (isset($_POST['num']) && !empty($_POST['num'])){
+            $_SESSION['num_rfid'] = $_POST['num'];
         }
     }
 ?>
@@ -79,6 +81,9 @@
 
 <?php
     if (isset($_SESSION['num_rfid'])){
+      if (checkNumRfid()==true) {
         header("Location: ./userform.php");
+      }
+      
     }
 ?>

@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: #333;
+    font-family: 'Poppins', sans-serif; /* change la police de base pour mettre Poppins*/
+    font-size: 3rem;                  /* 1.6rem = 16px : taille standard Google Chrome*/
+    
+    max-width: 1500px;                  /* limite la largeur du site à 1500px */
+    margin: 0 auto;
+}
+
+a {                                     /* change la couleur des liens et enlève la soulignement du lien*/   
+    text-decoration: none;
+    color: #333
+}
+
+/* Classes globales */
+
+.list-unstyled {                        /* enlève les puces des listes et reset le padding /margin*/
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.d-flex {                               /* permet d'appliquer flex à un bloc (div) */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid {                                 /* permet d'appliquer grid à un bloc (div) */
+    display: grid;
+    justify-content: center;
+}
+
+body {
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    
+.container {
+    width:100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.form, .header, .info, .footer {
+    align-items: center;
+    text-align: center;
+    padding: 3rem 0rem;
+}
+
+.field {
+    padding: 1rem 0rem
+}
+
+.header {
+    background-color: #b8b8b8;
+}
+
+.main {
+    background-color: #f2f2f2;
+}
+
+.footer {
+    /* background-color: #d65311; */
+    height: 6rem;
+}
+
+.custom-shape-divider-bottom-1679502066 {
+    margin: 0;
+    background-color: #ED5C26;
+}
+
+.custom-shape-divider-bottom-1679502066 svg {
+    background-color: #ED5C26;
+    margin: 0;
+}
+
+.custom-shape-divider-bottom-1679502066 .shape-fill {
+    fill: #f2f2f2;
+    margin: 0;
+}
+
+.spacer {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.layer1 {
+    background-color: #ED5C26;
+}
+
+input {
+    width: 30rem;
+    height: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    
+}
+
+input::placeholder {
+    color: #333;
+    font-family: 'Poppins', sans-serif; /* change la police de base pour mettre Poppins*/
+    font-size: 2rem; 
+}
+
+select {
+    width: 30rem;
+    height: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+option {
+    color: #333;
+    font-family: 'Poppins', sans-serif; /* change la police de base pour mettre Poppins*/
+    font-size: 2rem; 
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.row {
+    width: 60%;
+    height: auto;
+}
+
+.other .noscan{
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.other .noscan input {
+    background-color: #01982c;
+    border: none;
+    border-radius: 10px;
+    font-size: 2rem;
+    color: white;
+    width: 30rem;
+    height: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    
+}

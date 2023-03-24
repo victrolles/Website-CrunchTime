@@ -54,13 +54,12 @@
         $type = $_SESSION['type'];
         $service = $_SESSION['service'];
 
-        $sql = "SELECT MAT.num_rfid, MAT.num_chambre, MAT.etat_valide, MAT.utiliser FROM materiel MAT WHERE id_type = '$type' AND num_chambre IN (SELECT num_chambre FROM localisation WHERE id_service = '$service') AND etat_valide = 1 AND utiliser = 1";
+        $sql = "SELECT MAT.num_rfid, MAT.num_chambre, MAT.etat_valide, MAT.utiliser FROM materiel MAT WHERE num_chambre IN (SELECT num_chambre FROM localisation WHERE id_service = '$service') AND etat_valide = 1 AND utiliser = 1  AND id_type = '$type'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
             while ($row = $result->fetch_assoc()) {
-                echo "Chambre n° ".$row['num_chambre'];
+                echo "Chambre n° ".$row['num_chambre']."<br>";
             }
         } else {
             echo "Aucune chambre n'est disponible";
@@ -77,7 +76,6 @@
 
         $sql = "SELECT MAT.num_rfid, MAT.num_chambre, MAT.etat_valide, MAT.utiliser FROM materiel MAT WHERE id_type = '$type' AND num_chambre IN (SELECT num_chambre FROM localisation WHERE id_service = '$service') AND etat_valide = 1 AND utiliser = 0";
         $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
         $number = 0;
         while ($row = $result->fetch_assoc()) {
             $number++;

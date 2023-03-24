@@ -29,8 +29,8 @@
                         <h4 class="title">Type :</h4>
                         <div class="field input">
                             <select name="type" id="type">
-                                <option value="2" selected>Canne Anglaise</option>
-                                <option value="1">Déambulateur</option>
+                                <option value="2">Canne Anglaise</option>
+                                <option value="1" selected>Déambulateur</option>
                             </select>
                         </div>
                     </div>
@@ -40,8 +40,8 @@
                         <div class="field input">
                             <select name="service" id="service">
                                 <option value="1" selected>Neurologie</option>
-                                <option value="2">Pédiatrie</option>
-                                <option value="3">Diabétologie</option>
+                                <option value="2">Diabétologie</option>
+                                <option value="3">Pédiatrie</option>
                             </select>
                         </div>
                     </div>
